@@ -2,28 +2,63 @@ import { ArrayService } from "./app-service";
 
 export class ArrayComponent implements ArrayService {
 
-    constructor() {}
-
-    public arrayMultiply(myArray: number[]) : Array<Number> {
-      
+    constructor() { }
+    arrayFindMultiples(myArray: any): Number[] {
+        throw new Error("Method not implemented.");
     }
 
-    public arraySeparate(myArray: any) : Array<string>{
-        
+    public arrayMultiply(myArray: number[]): Array<Number> {
+        let temp = [], j = 0;
+        for (var i = 0; i < myArray.length; i++) {
+            if (myArray[i] % 5 === 0 || myArray[i] % 10 === 0) {
+                temp[j] = myArray[i];
+                j++;
+            }
+        }
+        return temp;
     }
 
-    public arraySplit(str:string) : Array<number>{
-
+    public arraySeparate(myArray: any): Array<string> {
+        let str = [], j = 0;
+        for (var i = 0; i < myArray.length; i++) {
+            if (typeof (myArray[i]) === "string") {
+                str[j] = myArray[i];
+                j++;
+            }
+        }
+        return str;
     }
 
-    public arraySort(myArray:any):Array<string>{
-      
+    public arraySplit(str: string): Array<number> {
+        const temp = str.split(",");
+        const primeNo = [];
+        let k = 0;
+        for (var i = 0; i < temp.length; i++) {
+            let y = +temp[i];
+            for (var j = 2; j < y; j++) {
+                if (y % j === 0) continue;
+                else {
+                    primeNo[k] = y;
+                    k++;
+                }
+            }
+        }
+        return primeNo;
     }
 
-    public arrayReplace(myArray:any):Array<number>{
-       
+    public arraySort(myArray: any): Array<string> {
+        myArray.sort();
+        myArray.reverse();
+        return myArray;
+    }
+
+    public arrayReplace(myArray: any): Array<number> {
+        for (var i = 0; i < myArray.length; i++) {
+            if (myArray[i] % 3 === 0) myArray[i] = 5;
+        }
+        return myArray;
+    }
 }
-
 let myArray: number[] = [34, 45, 60, 23, 13, 25, 70];
 let array = new ArrayComponent();
 
