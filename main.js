@@ -50,6 +50,8 @@ var ArrayComponent = /** @class */ (function () {
         return myArray;
     };
     ArrayComponent.prototype.arrayReplace = function (myArray) {
+        //Done
+        console.log('Replace');
         for (var i = 0; i < myArray.length; i++) {
             if (myArray[i] % 3 === 0)
                 myArray[i] = 5;

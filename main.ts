@@ -8,6 +8,7 @@ export class ArrayComponent implements ArrayService {
     }
 
     public arrayMultiply(myArray: number[]): Array<Number> {
+        console.log("Array method is used to find the multiples of 5 and 10 in the given array");
         let temp = [], j = 0;
         for (var i = 0; i < myArray.length; i++) {
             if (myArray[i] % 5 === 0 || myArray[i] % 10 === 0) {
@@ -19,6 +20,7 @@ export class ArrayComponent implements ArrayService {
     }
 
     public arraySeparate(myArray: any): Array<string> {
+        console.log("String values");
         let str = [], j = 0;
         for (var i = 0; i < myArray.length; i++) {
             if (typeof (myArray[i]) === "string") {
@@ -30,6 +32,7 @@ export class ArrayComponent implements ArrayService {
     }
 
     public arraySplit(str: string): Array<number> {
+        console.log("NC");
         const temp = str.split(",");
         const primeNo = [];
         let k = 0;
@@ -47,12 +50,15 @@ export class ArrayComponent implements ArrayService {
     }
 
     public arraySort(myArray: any): Array<string> {
+        console.log("Sort");
         myArray.sort();
         myArray.reverse();
         return myArray;
     }
 
     public arrayReplace(myArray: any): Array<number> {
+        //Done
+        console.log('Replace');
         for (var i = 0; i < myArray.length; i++) {
             if (myArray[i] % 3 === 0) myArray[i] = 5;
         }
